@@ -125,8 +125,8 @@ model neighborhood_L
           lineThickness=0.5)}), Icon(coordinateSystem(extent={{-100,-100},{120,
             100}})),
     experiment(
-      StopTime=3.1536e+007,
-      Interval=3600,
-      __Dymola_Algorithm="Lsodar"),
+      StopTime=2.6e+006,
+      Interval=900,
+      __Dymola_Algorithm="Dassl"),
     __Dymola_experimentSetupOutput);
 end neighborhood_L;

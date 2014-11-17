@@ -1,5 +1,5 @@
 within CE;
-model neighborhood
+model neighborhood_NoApp "Neighborhood without appartments"
 
   inner IDEAS.SimInfoManager sim
     annotation (Placement(transformation(extent={{-100,80},{-80,100}})));
@@ -123,18 +123,6 @@ model neighborhood
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={50,-30})));
-  IDEAS.Interfaces.Building building12(
-    redeclare CE.Models.Appartment building,
-    redeclare CE.Occupants.ISO13790 occupant,
-    redeclare IDEAS.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid,
-    redeclare IDEAS.VentilationSystems.None
-      ventilationSystem,
-    redeclare CE.HeatingSystems.HeatPump heatingSystem(QNom={1200,400,1200,1000,
-          400,1000,1000,400,1000,1000,400,1000,1000,400,1000}, nEmbPorts=10))
-                                       annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={70,-30})));
   IDEAS.Interfaces.Building building13(
     redeclare IDEAS.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid,
     redeclare CE.Occupants.ISO13790 occupant,
@@ -146,18 +134,6 @@ model neighborhood
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={80,-70})));
-  IDEAS.Interfaces.Building building14(
-    redeclare CE.Models.Appartment building,
-    redeclare CE.Occupants.ISO13790 occupant,
-    redeclare IDEAS.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid,
-    redeclare IDEAS.VentilationSystems.None
-      ventilationSystem,
-    redeclare CE.HeatingSystems.HeatPump heatingSystem(QNom={1200,400,1200,1000,
-          400,1000,1000,400,1000,1000,400,1000,1000,400,1000}, nEmbPorts=10))
-                                       annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={90,-30})));
   IDEAS.Interfaces.Building building15(
     redeclare IDEAS.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid,
     redeclare CE.Occupants.ISO13790 occupant,
@@ -292,4 +268,4 @@ model neighborhood
       Interval=900,
       __Dymola_Algorithm="Dassl"),
     __Dymola_experimentSetupOutput);
-end neighborhood;
+end neighborhood_NoApp;
