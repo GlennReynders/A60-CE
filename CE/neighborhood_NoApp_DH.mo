@@ -179,7 +179,7 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare CE.Models.SR1 building(orientation=0),
     redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
                                          heatingSystem(QNom={3000,7000,0},
-        numberOfConnections=1),                                            DH=true)
+        numberOfConnections=v1),                                            DH=true)
                                        annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
@@ -268,12 +268,12 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     annotation (Placement(transformation(extent={{-80,80},{-60,100}})));
   IDEAS.DistrictHeating.Production.PolynomialProduction polynomialProduction(
     redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
-
-    QNom=50000,
-    m_flow_nominal=30,
     redeclare IDEAS.DistrictHeating.Production.Data.Polynomials.Boiler2ndDegree
-      data)
+      data,
+    QNom=117000,
+    m_flow_nominal=0.94)
     annotation (Placement(transformation(extent={{-24,-20},{-8,-2}})));
+
   IDEAS.DistrictHeating.Substations.SingleHeatExchanger HX23 annotation (
       Placement(transformation(
         extent={{-3,-3},{3,3}},
@@ -314,77 +314,84 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
         extent={{-3,-3},{3,3}},
         rotation=270,
         origin={11,9})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2324_sup annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=90,
         origin={11,66})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM1 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2223_sup annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=90,
         origin={11,56})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM2 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2122_sup annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=90,
         origin={11,44})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM3 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2021_sup annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=90,
         origin={11,34})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM4 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1929_sup annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=90,
         origin={11,24})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM5 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1819_sup annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=90,
         origin={11,14})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM6 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1718_sup annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=90,
         origin={11,4})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM7 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1718_ret(
+    pipeLength=10,
+    pipeDiameter=0.373,
+    U=0.1) annotation (Placement(transformation(
         extent={{-2,-1},{2,1}},
         rotation=270,
         origin={7,4})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM8 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1819_ret annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=270,
         origin={7,14})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM9 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1920_ret annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=270,
         origin={7,24})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM10 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2021_ret annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=270,
         origin={7,34})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM11 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2122_ret annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=270,
         origin={7,44})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM12 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2223_ret annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=270,
         origin={7,56})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM13 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2324_ret annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=270,
         origin={7,66})));
-  IDEAS.Fluid.Movers.FlowMachine_dp fan
+  IDEAS.Fluid.Movers.FlowMachine_dp fan(
+    motorCooledByFluid=false,
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+
+    m_flow_nominal=0.94,
+    addPowerToMedium=false)
     annotation (Placement(transformation(extent={{-8,-20},{0,-12}})));
   IDEAS.DistrictHeating.Substations.SingleHeatExchanger HX1 annotation (
       Placement(transformation(
@@ -396,13 +403,13 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
         extent={{-3,-3},{3,3}},
         rotation=0,
         origin={-63,-49})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM14 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe12_ret annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={-81,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM15 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe12_sup annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={-81,-52})));
@@ -411,13 +418,13 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
         extent={{-3,-3},{3,3}},
         rotation=0,
         origin={-49,-49})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM16 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe34_ret annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={-57,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM17 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe34_sup annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={-57,-52})));
@@ -426,13 +433,13 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
         extent={{-3,-3},{3,3}},
         rotation=180,
         origin={-75,-53})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM18 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe23_ret annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={-69,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM19 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe23_sup annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={-69,-52})));
@@ -441,23 +448,23 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
         extent={{-3,-3},{3,3}},
         rotation=0,
         origin={-31,-49})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM20 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe45_ret annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={-39,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM21 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe45_sup annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={-39,-52})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM22 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe56_ret annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={-25,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM23 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe56_sup annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={-25,-52})));
@@ -471,13 +478,13 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
         extent={{-3,-3},{3,3}},
         rotation=0,
         origin={-5,-49})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM24 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe67_ret annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={-13,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM25 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe67_sup annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={-13,-52})));
@@ -491,13 +498,13 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
         extent={{-3,-3},{3,3}},
         rotation=0,
         origin={29,-49})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM26 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe89_ret annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={23,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM27 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe89_sup annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={23,-52})));
@@ -506,13 +513,13 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
         extent={{-3,-3},{3,3}},
         rotation=180,
         origin={29,-57})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM28 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1011_ret annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={39,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM29 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1011_sup annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={39,-52})));
@@ -521,13 +528,13 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
         extent={{-3,-3},{3,3}},
         rotation=0,
         origin={49,-49})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM30 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1113_ret annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={57,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM31 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1113_sup annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={57,-52})));
@@ -536,13 +543,13 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
         extent={{-3,-3},{3,3}},
         rotation=180,
         origin={71,-53})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM32 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1315_ret annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={77,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM33 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1315_sup annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={77,-52})));
@@ -551,13 +558,13 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
         extent={{-3,-3},{3,3}},
         rotation=180,
         origin={91,-53})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM34 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1516_ret annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={99,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM insulatedPipeM35 annotation (
-      Placement(transformation(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1516_sup annotation (Placement(
+        transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={99,-52})));
@@ -631,115 +638,115 @@ equation
       points={{14,8.4},{18,8.4},{18,2},{31.6,2},{31.6,4}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX24.flowPort_supply_in, insulatedPipeM.port_b) annotation (Line(
+  connect(HX24.flowPort_supply_in, pipe2324_sup.port_b) annotation (Line(
       points={{9.8,68},{11,68}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(insulatedPipeM.port_a, HX23.flowPort_return_out) annotation (Line(
+  connect(pipe2324_sup.port_a, HX23.flowPort_return_out) annotation (Line(
       points={{11,64},{9.4,64}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX22.flowPort_supply_out, insulatedPipeM1.port_a) annotation (Line(
+  connect(HX22.flowPort_supply_out, pipe2223_sup.port_a) annotation (Line(
       points={{9.8,52},{10,52},{10,54},{11,54}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX23.flowPort_return_in, insulatedPipeM1.port_b) annotation (Line(
+  connect(HX23.flowPort_return_in, pipe2223_sup.port_b) annotation (Line(
       points={{9.4,58},{11,58}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX22.flowPort_supply_in, insulatedPipeM2.port_b) annotation (Line(
+  connect(HX22.flowPort_supply_in, pipe2122_sup.port_b) annotation (Line(
       points={{9.8,46},{11,46}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX21.flowPort_return_out, insulatedPipeM2.port_a) annotation (Line(
+  connect(HX21.flowPort_return_out, pipe2122_sup.port_a) annotation (Line(
       points={{9.4,42},{11,42}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX20.flowPort_supply_out, insulatedPipeM3.port_a) annotation (Line(
+  connect(HX20.flowPort_supply_out, pipe2021_sup.port_a) annotation (Line(
       points={{9.8,32},{11,32}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX21.flowPort_return_in, insulatedPipeM3.port_b) annotation (Line(
+  connect(HX21.flowPort_return_in, pipe2021_sup.port_b) annotation (Line(
       points={{9.4,36},{11,36}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX20.flowPort_supply_in, insulatedPipeM4.port_b) annotation (Line(
+  connect(HX20.flowPort_supply_in, pipe1929_sup.port_b) annotation (Line(
       points={{9.8,26},{11,26}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX19.flowPort_return_out, insulatedPipeM4.port_a) annotation (Line(
+  connect(HX19.flowPort_return_out, pipe1929_sup.port_a) annotation (Line(
       points={{9.4,22},{11,22}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX18.flowPort_supply_out, insulatedPipeM5.port_a) annotation (Line(
+  connect(HX18.flowPort_supply_out, pipe1819_sup.port_a) annotation (Line(
       points={{9.8,12},{11,12}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX19.flowPort_return_in, insulatedPipeM5.port_b) annotation (Line(
+  connect(HX19.flowPort_return_in, pipe1819_sup.port_b) annotation (Line(
       points={{9.4,16},{11,16}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX18.flowPort_supply_in, insulatedPipeM6.port_b) annotation (Line(
+  connect(HX18.flowPort_supply_in, pipe1718_sup.port_b) annotation (Line(
       points={{9.8,6},{11,6}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX17.flowPort_return_out, insulatedPipeM6.port_a) annotation (Line(
+  connect(HX17.flowPort_return_out, pipe1718_sup.port_a) annotation (Line(
       points={{9.4,2},{11,2}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX17.flowPort_supply_in, insulatedPipeM7.port_b) annotation (Line(
+  connect(HX17.flowPort_supply_in, pipe1718_ret.port_b) annotation (Line(
       points={{8.2,2},{7,2}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(insulatedPipeM7.port_a, HX18.flowPort_return_out) annotation (Line(
+  connect(pipe1718_ret.port_a, HX18.flowPort_return_out) annotation (Line(
       points={{7,6},{8.6,6}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX19.flowPort_supply_out, insulatedPipeM8.port_a) annotation (Line(
+  connect(HX19.flowPort_supply_out, pipe1819_ret.port_a) annotation (Line(
       points={{8.2,16},{7,16}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(insulatedPipeM8.port_b, HX18.flowPort_return_in) annotation (Line(
+  connect(pipe1819_ret.port_b, HX18.flowPort_return_in) annotation (Line(
       points={{7,12},{8.6,12}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX19.flowPort_supply_in, insulatedPipeM9.port_b) annotation (Line(
+  connect(HX19.flowPort_supply_in, pipe1920_ret.port_b) annotation (Line(
       points={{8.2,22},{7,22}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(insulatedPipeM9.port_a, HX20.flowPort_return_out) annotation (Line(
+  connect(pipe1920_ret.port_a, HX20.flowPort_return_out) annotation (Line(
       points={{7,26},{8.6,26}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX21.flowPort_supply_out, insulatedPipeM10.port_a) annotation (Line(
+  connect(HX21.flowPort_supply_out, pipe2021_ret.port_a) annotation (Line(
       points={{8.2,36},{7,36}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(insulatedPipeM10.port_b, HX20.flowPort_return_in) annotation (Line(
+  connect(pipe2021_ret.port_b, HX20.flowPort_return_in) annotation (Line(
       points={{7,32},{8.6,32}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX21.flowPort_supply_in, insulatedPipeM11.port_b) annotation (Line(
+  connect(HX21.flowPort_supply_in, pipe2122_ret.port_b) annotation (Line(
       points={{8.2,42},{7,42}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(insulatedPipeM11.port_a, HX22.flowPort_return_out) annotation (Line(
+  connect(pipe2122_ret.port_a, HX22.flowPort_return_out) annotation (Line(
       points={{7,46},{8.6,46}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX23.flowPort_supply_out, insulatedPipeM12.port_a) annotation (Line(
+  connect(HX23.flowPort_supply_out, pipe2223_ret.port_a) annotation (Line(
       points={{8.2,58},{7,58}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(insulatedPipeM12.port_b, HX22.flowPort_return_in) annotation (Line(
+  connect(pipe2223_ret.port_b, HX22.flowPort_return_in) annotation (Line(
       points={{7,54},{8.6,54},{8.6,52}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX23.flowPort_supply_in, insulatedPipeM13.port_b) annotation (Line(
+  connect(HX23.flowPort_supply_in, pipe2324_ret.port_b) annotation (Line(
       points={{8.2,64},{7,64}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(insulatedPipeM13.port_a, HX24.flowPort_return_out) annotation (Line(
+  connect(pipe2324_ret.port_a, HX24.flowPort_return_out) annotation (Line(
       points={{7,68},{8.6,68}},
       color={0,127,255},
       smooth=Smooth.None));
@@ -772,27 +779,27 @@ equation
       points={{-68.4,-40},{-68.4,-46},{-62.4,-46}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX1.flowPort_supply_in, insulatedPipeM14.port_b) annotation (Line(
+  connect(HX1.flowPort_supply_in, pipe12_ret.port_b) annotation (Line(
       points={{-88,-50.2},{-86,-50.2},{-86,-50},{-83,-50}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX1.flowPort_return_out, insulatedPipeM15.port_a) annotation (Line(
+  connect(HX1.flowPort_return_out, pipe12_sup.port_a) annotation (Line(
       points={{-88,-51.4},{-86,-51.4},{-86,-52},{-83,-52}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(insulatedPipeM16.port_a, HX4.flowPort_supply_out) annotation (Line(
+  connect(pipe34_ret.port_a, HX4.flowPort_supply_out) annotation (Line(
       points={{-55,-50},{-54,-50},{-54,-50.2},{-52,-50.2}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(insulatedPipeM17.port_b, HX4.flowPort_return_in) annotation (Line(
+  connect(pipe34_sup.port_b, HX4.flowPort_return_in) annotation (Line(
       points={{-55,-52},{-54,-52},{-54,-51.4},{-52,-51.4}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(insulatedPipeM14.port_a, HX2.flowPort_return_out) annotation (Line(
+  connect(pipe12_ret.port_a, HX2.flowPort_return_out) annotation (Line(
       points={{-79,-50},{-78,-50},{-78,-50.6}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(insulatedPipeM15.port_b, HX2.flowPort_supply_in) annotation (Line(
+  connect(pipe12_sup.port_b, HX2.flowPort_supply_in) annotation (Line(
       points={{-79,-52},{-78,-52},{-78,-51.8}},
       color={0,127,255},
       smooth=Smooth.None));
@@ -806,59 +813,59 @@ equation
           -78.4,-80}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX3.flowPort_return_out, insulatedPipeM17.port_a) annotation (Line(
+  connect(HX3.flowPort_return_out, pipe34_sup.port_a) annotation (Line(
       points={{-60,-51.4},{-59.5,-51.4},{-59.5,-52},{-59,-52}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX3.flowPort_supply_in, insulatedPipeM16.port_b) annotation (Line(
+  connect(HX3.flowPort_supply_in, pipe34_ret.port_b) annotation (Line(
       points={{-60,-50.2},{-60,-50},{-59,-50}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX2.flowPort_supply_out, insulatedPipeM19.port_a) annotation (Line(
+  connect(HX2.flowPort_supply_out, pipe23_sup.port_a) annotation (Line(
       points={{-72,-51.8},{-72,-52},{-71,-52}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX2.flowPort_return_in, insulatedPipeM18.port_b) annotation (Line(
+  connect(HX2.flowPort_return_in, pipe23_ret.port_b) annotation (Line(
       points={{-72,-50.6},{-72,-50},{-71,-50}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(insulatedPipeM18.port_a, HX3.flowPort_supply_out) annotation (Line(
+  connect(pipe23_ret.port_a, HX3.flowPort_supply_out) annotation (Line(
       points={{-67,-50},{-66,-50},{-66,-50.2}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(insulatedPipeM19.port_b, HX3.flowPort_return_in) annotation (Line(
+  connect(pipe23_sup.port_b, HX3.flowPort_return_in) annotation (Line(
       points={{-67,-52},{-66,-52},{-66,-51.4}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(insulatedPipeM20.port_a, HX5.flowPort_supply_out) annotation (Line(
+  connect(pipe45_ret.port_a, HX5.flowPort_supply_out) annotation (Line(
       points={{-37,-50},{-36,-50},{-36,-50.2},{-34,-50.2}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(insulatedPipeM21.port_b, HX5.flowPort_return_in) annotation (Line(
+  connect(pipe45_sup.port_b, HX5.flowPort_return_in) annotation (Line(
       points={{-37,-52},{-36,-52},{-36,-51.4},{-34,-51.4}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX4.flowPort_supply_in, insulatedPipeM20.port_b) annotation (Line(
+  connect(HX4.flowPort_supply_in, pipe45_ret.port_b) annotation (Line(
       points={{-46,-50.2},{-44,-50.2},{-44,-50},{-41,-50}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX4.flowPort_return_out, insulatedPipeM21.port_a) annotation (Line(
+  connect(HX4.flowPort_return_out, pipe45_sup.port_a) annotation (Line(
       points={{-46,-51.4},{-44,-51.4},{-44,-52},{-41,-52}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(insulatedPipeM22.port_a, HX6.flowPort_return_out) annotation (Line(
+  connect(pipe56_ret.port_a, HX6.flowPort_return_out) annotation (Line(
       points={{-23,-50},{-22,-50},{-22,-50.6}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(insulatedPipeM23.port_b, HX6.flowPort_supply_in) annotation (Line(
+  connect(pipe56_sup.port_b, HX6.flowPort_supply_in) annotation (Line(
       points={{-23,-52},{-22,-52},{-22,-51.8}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX5.flowPort_supply_in, insulatedPipeM22.port_b) annotation (Line(
+  connect(HX5.flowPort_supply_in, pipe56_ret.port_b) annotation (Line(
       points={{-28,-50.2},{-28,-50},{-27,-50}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX5.flowPort_return_out, insulatedPipeM23.port_a) annotation (Line(
+  connect(HX5.flowPort_return_out, pipe56_sup.port_a) annotation (Line(
       points={{-28,-51.4},{-28,-52},{-27,-52}},
       color={0,0,0},
       smooth=Smooth.None));
@@ -872,19 +879,19 @@ equation
           -21.6,-80}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(insulatedPipeM24.port_a, HX7.flowPort_supply_out) annotation (Line(
+  connect(pipe67_ret.port_a, HX7.flowPort_supply_out) annotation (Line(
       points={{-11,-50},{-10,-50},{-10,-50.2},{-8,-50.2}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(insulatedPipeM25.port_b, HX7.flowPort_return_in) annotation (Line(
+  connect(pipe67_sup.port_b, HX7.flowPort_return_in) annotation (Line(
       points={{-11,-52},{-10,-52},{-10,-51.4},{-8,-51.4}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX6.flowPort_supply_out, insulatedPipeM25.port_a) annotation (Line(
+  connect(HX6.flowPort_supply_out, pipe67_sup.port_a) annotation (Line(
       points={{-16,-51.8},{-16,-52},{-15,-52}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX6.flowPort_return_in, insulatedPipeM24.port_b) annotation (Line(
+  connect(HX6.flowPort_return_in, pipe67_ret.port_b) annotation (Line(
       points={{-16,-50.6},{-16,-50},{-15,-50}},
       color={0,0,0},
       smooth=Smooth.None));
@@ -904,10 +911,6 @@ equation
       points={{-8.4,-40},{-8,-40},{-8,-42},{-4.4,-42},{-4.4,-46}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX7.flowPort_supply_in, HX17.flowPort_return_in) annotation (Line(
-      points={{-2,-50.2},{6,-50.2},{6,-50},{10,-50},{10,-16},{9.4,-16},{9.4,-4}},
-      color={0,0,0},
-      smooth=Smooth.None));
 
   connect(HX7.flowPort_return_out, polynomialProduction.port_a) annotation (
       Line(
@@ -915,43 +918,43 @@ equation
       color={0,0,0},
       smooth=Smooth.None));
 
-  connect(HX8.flowPort_return_in, insulatedPipeM26.port_b) annotation (Line(
+  connect(HX8.flowPort_return_in, pipe89_ret.port_b) annotation (Line(
       points={{20,-50.6},{20,-50},{21,-50}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX8.flowPort_supply_out, insulatedPipeM27.port_a) annotation (Line(
+  connect(HX8.flowPort_supply_out, pipe89_sup.port_a) annotation (Line(
       points={{20,-51.8},{21,-51.8},{21,-52}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(insulatedPipeM26.port_a, HX9.flowPort_supply_out) annotation (Line(
+  connect(pipe89_ret.port_a, HX9.flowPort_supply_out) annotation (Line(
       points={{25,-50},{26,-50},{26,-50.2}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(insulatedPipeM27.port_b, HX9.flowPort_return_in) annotation (Line(
+  connect(pipe89_sup.port_b, HX9.flowPort_return_in) annotation (Line(
       points={{25,-52},{26,-52},{26,-51.4}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(insulatedPipeM26.port_a, HX10.flowPort_return_out) annotation (Line(
+  connect(pipe89_ret.port_a, HX10.flowPort_return_out) annotation (Line(
       points={{25,-50},{26,-50},{26,-54.6}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(insulatedPipeM27.port_b, HX10.flowPort_supply_in) annotation (Line(
+  connect(pipe89_sup.port_b, HX10.flowPort_supply_in) annotation (Line(
       points={{25,-52},{26,-52},{26,-55.8}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX9.flowPort_supply_in, insulatedPipeM28.port_b) annotation (Line(
+  connect(HX9.flowPort_supply_in, pipe1011_ret.port_b) annotation (Line(
       points={{32,-50.2},{32,-50},{37,-50}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX9.flowPort_return_out, insulatedPipeM29.port_a) annotation (Line(
+  connect(HX9.flowPort_return_out, pipe1011_sup.port_a) annotation (Line(
       points={{32,-51.4},{34,-51.4},{34,-52},{37,-52}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX10.flowPort_return_in, insulatedPipeM28.port_b) annotation (Line(
+  connect(HX10.flowPort_return_in, pipe1011_ret.port_b) annotation (Line(
       points={{32,-54.6},{36,-54.6},{36,-50},{37,-50}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX10.flowPort_supply_out, insulatedPipeM29.port_a) annotation (Line(
+  connect(HX10.flowPort_supply_out, pipe1011_sup.port_a) annotation (Line(
       points={{32,-55.8},{36,-55.8},{36,-52},{37,-52}},
       color={0,0,0},
       smooth=Smooth.None));
@@ -981,11 +984,11 @@ equation
       points={{28.4,-60},{28,-60},{28,-86},{41.6,-86},{41.6,-80}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(insulatedPipeM28.port_a, HX11.flowPort_supply_out) annotation (Line(
+  connect(pipe1011_ret.port_a, HX11.flowPort_supply_out) annotation (Line(
       points={{41,-50},{44,-50},{44,-50.2},{46,-50.2}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(insulatedPipeM29.port_b, HX11.flowPort_return_in) annotation (Line(
+  connect(pipe1011_sup.port_b, HX11.flowPort_return_in) annotation (Line(
       points={{41,-52},{44,-52},{44,-51.4},{46,-51.4}},
       color={0,127,255},
       smooth=Smooth.None));
@@ -997,19 +1000,19 @@ equation
       points={{51.6,-40},{49.6,-40},{49.6,-46}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX11.flowPort_supply_in, insulatedPipeM30.port_b) annotation (Line(
+  connect(HX11.flowPort_supply_in, pipe1113_ret.port_b) annotation (Line(
       points={{52,-50.2},{54,-50.2},{54,-50},{55,-50}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX11.flowPort_return_out, insulatedPipeM31.port_a) annotation (Line(
+  connect(HX11.flowPort_return_out, pipe1113_sup.port_a) annotation (Line(
       points={{52,-51.4},{54,-51.4},{54,-52},{55,-52}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(insulatedPipeM31.port_b, HX13.flowPort_supply_in) annotation (Line(
+  connect(pipe1113_sup.port_b, HX13.flowPort_supply_in) annotation (Line(
       points={{59,-52},{66,-52},{66,-51.8},{68,-51.8}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(insulatedPipeM30.port_a, HX13.flowPort_return_out) annotation (Line(
+  connect(pipe1113_ret.port_a, HX13.flowPort_return_out) annotation (Line(
       points={{59,-50},{64,-50},{64,-50.6},{68,-50.6}},
       color={0,127,255},
       smooth=Smooth.None));
@@ -1021,19 +1024,19 @@ equation
       points={{71.6,-56},{72,-56},{72,-84},{78.4,-84},{78.4,-80}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(insulatedPipeM33.port_b, HX15.flowPort_supply_in) annotation (Line(
+  connect(pipe1315_sup.port_b, HX15.flowPort_supply_in) annotation (Line(
       points={{79,-52},{86,-52},{86,-51.8},{88,-51.8}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(insulatedPipeM32.port_a, HX15.flowPort_return_out) annotation (Line(
+  connect(pipe1315_ret.port_a, HX15.flowPort_return_out) annotation (Line(
       points={{79,-50},{84,-50},{84,-50.6},{88,-50.6}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX13.flowPort_return_in, insulatedPipeM32.port_b) annotation (Line(
+  connect(HX13.flowPort_return_in, pipe1315_ret.port_b) annotation (Line(
       points={{74,-50.6},{74,-50},{75,-50}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX13.flowPort_supply_out, insulatedPipeM33.port_a) annotation (Line(
+  connect(HX13.flowPort_supply_out, pipe1315_sup.port_a) annotation (Line(
       points={{74,-51.8},{75,-51.8},{75,-52}},
       color={0,0,0},
       smooth=Smooth.None));
@@ -1045,19 +1048,19 @@ equation
       points={{91.6,-56},{92,-56},{92,-84},{98.4,-84},{98.4,-80}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(insulatedPipeM34.port_a, HX16.flowPort_supply_out) annotation (Line(
+  connect(pipe1516_ret.port_a, HX16.flowPort_supply_out) annotation (Line(
       points={{101,-50},{104,-50},{104,-50.2},{106,-50.2}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(insulatedPipeM35.port_b, HX16.flowPort_return_in) annotation (Line(
+  connect(pipe1516_sup.port_b, HX16.flowPort_return_in) annotation (Line(
       points={{101,-52},{104,-52},{104,-51.4},{106,-51.4}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX15.flowPort_return_in, insulatedPipeM34.port_b) annotation (Line(
+  connect(HX15.flowPort_return_in, pipe1516_ret.port_b) annotation (Line(
       points={{94,-50.6},{96,-50.6},{96,-50},{97,-50}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX15.flowPort_supply_out, insulatedPipeM35.port_a) annotation (Line(
+  connect(HX15.flowPort_supply_out, pipe1516_sup.port_a) annotation (Line(
       points={{94,-51.8},{97,-51.8},{97,-52}},
       color={0,0,0},
       smooth=Smooth.None));
@@ -1076,6 +1079,11 @@ equation
       smooth=Smooth.None));
   connect(HX8.flowPort_supply_in, fan.port_b) annotation (Line(
       points={{14,-51.8},{14,-52},{10,-52},{10,-16},{0,-16}},
+      color={0,0,0},
+      smooth=Smooth.None));
+  connect(HX7.flowPort_supply_in, HX17.flowPort_supply_out) annotation (Line(
+      points={{-2,-50.2},{2,-50.2},{2,-50},{6,-50},{6,-8},{8.2,-8.54545},{8.2,
+          -4}},
       color={0,0,0},
       smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(extent={{-100,-100},{120,100}},
