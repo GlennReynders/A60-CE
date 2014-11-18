@@ -4,13 +4,13 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
   inner IDEAS.SimInfoManager sim
     annotation (Placement(transformation(extent={{-100,80},{-80,100}})));
   IDEAS.Interfaces.Building building1(
-    redeclare CE.Occupants.ISO13790 occupant,
     redeclare IDEAS.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid,
     redeclare CE.Models.SL1 building(orientation=0),
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={1000,1100,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={1000,1100,10},
         numberOfConnections=1),                                            DH=true,
-    redeclare IDEAS.VentilationSystems.None ventilationSystem)
+    redeclare IDEAS.VentilationSystems.None ventilationSystem,
+    redeclare CE.Occupants.ISO13790 occupant)
                                       annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
@@ -21,8 +21,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
     redeclare CE.Models.D1 building(orientation=3.1415926535898),
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={1000,1100,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={1000,1100,10},
         numberOfConnections=1),                                            DH=true)
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -34,8 +34,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
     redeclare CE.Models.T1 building(orientation=0),
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={1000,1100,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={1000,1100,10},
         numberOfConnections=1),                                            DH=true)
                                       annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -47,8 +47,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
     redeclare CE.Models.T2 building(orientation=0),
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={1000,1100,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={1000,1100,10},
         numberOfConnections=1),                                            DH=true)
                                       annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -60,8 +60,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
     redeclare CE.Models.T1 building(orientation=0),
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={1000,1100,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={1000,1100,10},
         numberOfConnections=1),                                            DH=true)
                                       annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -73,8 +73,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
     redeclare CE.Models.D2 building(orientation=3.1415926535898),
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={4200,9500,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={4200,9500,10},
         numberOfConnections=1),                                            DH=true)
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -86,8 +86,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare CE.Models.SR2 building(orientation=0),
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={3000,7000,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={3000,7000,10},
         numberOfConnections=1),                                            DH=true)
                                       annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -99,8 +99,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
       ventilationSystem,
     redeclare CE.Occupants.ISO13790 occupant,
     redeclare CE.Models.D1 building(orientation=3.1415926535898),
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={1000,1100,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={1000,1100,10},
         numberOfConnections=1),                                            DH=true)
                          annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -112,8 +112,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid,
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={3000,7000,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={3000,7000,10},
         numberOfConnections=1),                                            DH=true)
                                       annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -125,8 +125,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
     redeclare CE.Models.D1 building(orientation=3.1415926535898),
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={1000,1100,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={1000,1100,10},
         numberOfConnections=1),                                            DH=true)
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -138,8 +138,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
     redeclare CE.Models.T1 building(orientation=0),
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={1000,1100,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={1000,1100,10},
         numberOfConnections=1),                                            DH=true)
                                        annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -151,8 +151,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
     redeclare CE.Models.D1 building(orientation=3.1415926535898),
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={1000,1100,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={1000,1100,10},
         numberOfConnections=1),                                            DH=true)
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -164,8 +164,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
     redeclare CE.Models.D2 building(orientation=3.1415926535898),
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={4200,9500,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={4200,9500,10},
         numberOfConnections=1),                                            DH=true)
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -177,9 +177,9 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
     redeclare CE.Models.SR1 building(orientation=0),
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={3000,7000,0},
-        numberOfConnections=v1),                                            DH=true)
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={3000,7000,10},
+        numberOfConnections=1),                                             DH=true)
                                        annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
@@ -190,8 +190,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid,
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={3000,7000,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={3000,7000,10},
         numberOfConnections=1),                                            DH=true)
     annotation (Placement(transformation(extent={{-20,0},{0,20}})));
   IDEAS.Interfaces.Building building18(
@@ -200,8 +200,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid,
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={1000,1100,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={1000,1100,10},
         numberOfConnections=1),                                            DH=true)
     annotation (Placement(transformation(extent={{20,4},{40,24}})));
   IDEAS.Interfaces.Building building19(
@@ -210,8 +210,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid,
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={1000,1100,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={1000,1100,10},
         numberOfConnections=1),                                            DH=true)
     annotation (Placement(transformation(extent={{-20,20},{0,40}})));
   IDEAS.Interfaces.Building building20(
@@ -220,8 +220,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid,
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={2200,4200,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={2200,4200,10},
         numberOfConnections=1),                                            DH=true)
     annotation (Placement(transformation(extent={{20,24},{40,44}})));
   IDEAS.Interfaces.Building building21(
@@ -230,8 +230,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid,
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={2200,4200,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={2200,4200,10},
         numberOfConnections=1),                                            DH=true)
     annotation (Placement(transformation(extent={{-20,40},{0,60}})));
   IDEAS.Interfaces.Building building22(
@@ -240,8 +240,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid,
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={1000,1100,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={1000,1100,10},
         numberOfConnections=1),                                            DH=true)
     annotation (Placement(transformation(extent={{20,44},{40,64}})));
   IDEAS.Interfaces.Building building23(
@@ -250,8 +250,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid,
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={1000,1100,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={1000,1100,10},
         numberOfConnections=1),                                            DH=true)
     annotation (Placement(transformation(extent={{-20,60},{0,80}})));
   IDEAS.Interfaces.Building building24(
@@ -260,8 +260,8 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
     redeclare IDEAS.Interfaces.BaseClasses.CausalInhomeFeeder inHomeGrid,
     redeclare IDEAS.VentilationSystems.None
       ventilationSystem,
-    redeclare IDEAS.HeatingSystems.Interfaces.Partial_HydraulicHeating_District
-                                         heatingSystem(QNom={3000,7000,0},
+    redeclare IDEAS.HeatingSystems.Heating_Radiators_DH
+                                         heatingSystem(QNom={3000,7000,10},
         numberOfConnections=1),                                            DH=true)
     annotation (Placement(transformation(extent={{20,64},{40,84}})));
   inner Modelica.Fluid.System system
@@ -272,7 +272,7 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
       data,
     QNom=117000,
     m_flow_nominal=0.94)
-    annotation (Placement(transformation(extent={{-24,-20},{-8,-2}})));
+    annotation (Placement(transformation(extent={{-32,-20},{-16,-2}})));
 
   IDEAS.DistrictHeating.Substations.SingleHeatExchanger HX23 annotation (
       Placement(transformation(
@@ -314,85 +314,140 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
         extent={{-3,-3},{3,3}},
         rotation=270,
         origin={11,9})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2324_sup annotation (Placement(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2324_sup(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=90,
         origin={11,66})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2223_sup annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2223_sup(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=90,
         origin={11,56})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2122_sup annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2122_sup(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=90,
         origin={11,44})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2021_sup annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2021_sup(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=90,
         origin={11,34})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1929_sup annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1929_sup(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=90,
         origin={11,24})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1819_sup annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1819_sup(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=90,
         origin={11,14})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1718_sup annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1718_sup(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=90,
         origin={11,4})));
+
   IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1718_ret(
     pipeLength=10,
     pipeDiameter=0.373,
-    U=0.1) annotation (Placement(transformation(
+    U=0.1,
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.32)
+           annotation (Placement(transformation(
         extent={{-2,-1},{2,1}},
         rotation=270,
         origin={7,4})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1819_ret annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1819_ret(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=270,
         origin={7,14})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1920_ret annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1920_ret(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=270,
         origin={7,24})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2021_ret annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2021_ret(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=270,
         origin={7,34})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2122_ret annotation (Placement(
-        transformation(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2122_ret(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(transformation(
         extent={{-2,-1},{2,1}},
         rotation=270,
         origin={7,44})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2223_ret annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2223_ret(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=270,
         origin={7,56})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2324_ret annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe2324_ret(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=270,
         origin={7,66})));
+
   IDEAS.Fluid.Movers.FlowMachine_dp fan(
     motorCooledByFluid=false,
     redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
-
     m_flow_nominal=0.94,
     addPowerToMedium=false)
     annotation (Placement(transformation(extent={{-8,-20},{0,-12}})));
+
   IDEAS.DistrictHeating.Substations.SingleHeatExchanger HX1 annotation (
       Placement(transformation(
         extent={{-3,-3},{3,3}},
@@ -403,71 +458,111 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
         extent={{-3,-3},{3,3}},
         rotation=0,
         origin={-63,-49})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe12_ret annotation (Placement(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe12_ret(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={-81,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe12_sup annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe12_sup(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={-81,-52})));
+
   IDEAS.DistrictHeating.Substations.SingleHeatExchanger HX4 annotation (
       Placement(transformation(
         extent={{-3,-3},{3,3}},
         rotation=0,
         origin={-49,-49})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe34_ret annotation (Placement(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe34_ret(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={-57,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe34_sup annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe34_sup(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={-57,-52})));
+
   IDEAS.DistrictHeating.Substations.SingleHeatExchanger HX2 annotation (
       Placement(transformation(
         extent={{-3,-3},{3,3}},
         rotation=180,
         origin={-75,-53})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe23_ret annotation (Placement(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe23_ret(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={-69,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe23_sup annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe23_sup(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={-69,-52})));
+
   IDEAS.DistrictHeating.Substations.SingleHeatExchanger HX5 annotation (
       Placement(transformation(
         extent={{-3,-3},{3,3}},
         rotation=0,
         origin={-31,-49})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe45_ret annotation (Placement(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe45_ret(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={-39,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe45_sup annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe45_sup(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={-39,-52})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe56_ret annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe56_ret(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={-25,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe56_sup annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe56_sup(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={-25,-52})));
+
   IDEAS.DistrictHeating.Substations.SingleHeatExchanger HX6 annotation (
       Placement(transformation(
         extent={{-3,-3},{3,3}},
@@ -478,16 +573,24 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
         extent={{-3,-3},{3,3}},
         rotation=0,
         origin={-5,-49})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe67_ret annotation (Placement(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe67_ret(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={-13,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe67_sup annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe67_sup(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={-13,-52})));
+
   IDEAS.DistrictHeating.Substations.SingleHeatExchanger HX8 annotation (
       Placement(transformation(
         extent={{-3,-3},{3,3}},
@@ -498,81 +601,133 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
         extent={{-3,-3},{3,3}},
         rotation=0,
         origin={29,-49})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe89_ret annotation (Placement(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe89_ret(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={23,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe89_sup annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe89_sup(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={23,-52})));
+
   IDEAS.DistrictHeating.Substations.SingleHeatExchanger HX10 annotation (
       Placement(transformation(
         extent={{-3,-3},{3,3}},
         rotation=180,
         origin={29,-57})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1011_ret annotation (Placement(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1011_ret(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={39,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1011_sup annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1011_sup(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={39,-52})));
+
   IDEAS.DistrictHeating.Substations.SingleHeatExchanger HX11 annotation (
       Placement(transformation(
         extent={{-3,-3},{3,3}},
         rotation=0,
         origin={49,-49})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1113_ret annotation (Placement(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1113_ret(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={57,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1113_sup annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1113_sup(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={57,-52})));
+
   IDEAS.DistrictHeating.Substations.SingleHeatExchanger HX13 annotation (
       Placement(transformation(
         extent={{-3,-3},{3,3}},
         rotation=180,
         origin={71,-53})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1315_ret annotation (Placement(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1315_ret(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={77,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1315_sup annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1315_sup(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={77,-52})));
+
   IDEAS.DistrictHeating.Substations.SingleHeatExchanger HX15 annotation (
       Placement(transformation(
         extent={{-3,-3},{3,3}},
         rotation=180,
         origin={91,-53})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1516_ret annotation (Placement(
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1516_ret(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=180,
         origin={99,-50})));
-  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1516_sup annotation (Placement(
+
+  IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe1516_sup(
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    m_flow_nominal=0.33,
+    pipeDiameter=0.35) annotation (Placement(
         transformation(
         extent={{-2,-1},{2,1}},
         rotation=0,
         origin={99,-52})));
+
   IDEAS.DistrictHeating.Substations.SingleHeatExchanger HX16 annotation (
       Placement(transformation(
         extent={{-3,-3},{3,3}},
         rotation=0,
         origin={109,-49})));
+  Modelica.Fluid.Sources.FixedBoundary boundary(
+    nPorts=1,
+    redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
+    use_T=false,
+    use_p=true,
+    p=300000)
+    annotation (Placement(transformation(extent={{-42,-14},{-50,4}})));
+
+  Modelica.Blocks.Sources.Constant const(k=36000 + 250*22)
+    annotation (Placement(transformation(extent={{-96,28},{-76,48}})));
+  Modelica.Blocks.Sources.Constant const1(k=273.15 + 80)
+    annotation (Placement(transformation(extent={{-72,48},{-52,68}})));
 equation
   connect(HX24.flowPort_b1, building24.port_return) annotation (Line(
       points={{14,71.6},{22,71.6},{22,64},{28.4,64}},
@@ -751,7 +906,7 @@ equation
       color={0,127,255},
       smooth=Smooth.None));
   connect(polynomialProduction.port_b, fan.port_a) annotation (Line(
-      points={{-7.84,-15.0909},{-8,-15.0909},{-8,-16}},
+      points={{-15.84,-15.0909},{-8,-15.0909},{-8,-16}},
       color={0,127,255},
       smooth=Smooth.None));
   connect(fan.port_b, HX17.flowPort_return_in) annotation (Line(
@@ -760,7 +915,7 @@ equation
       smooth=Smooth.None));
   connect(polynomialProduction.port_a, HX17.flowPort_supply_out) annotation (
       Line(
-      points={{-7.84,-8.54545},{8.2,-8.54545},{8.2,-4}},
+      points={{-15.84,-8.54545},{8.2,-8.54545},{8.2,-4}},
       color={0,127,255},
       smooth=Smooth.None));
   connect(building1.port_return, HX1.flowPort_b1) annotation (Line(
@@ -914,7 +1069,8 @@ equation
 
   connect(HX7.flowPort_return_out, polynomialProduction.port_a) annotation (
       Line(
-      points={{-2,-51.4},{0,-51.4},{0,-52},{8,-52},{8,-8.54545},{-7.84,-8.54545}},
+      points={{-2,-51.4},{0,-51.4},{0,-52},{8,-52},{8,-8.54545},{-15.84,
+          -8.54545}},
       color={0,0,0},
       smooth=Smooth.None));
 
@@ -1074,7 +1230,7 @@ equation
       smooth=Smooth.None));
   connect(HX8.flowPort_return_out, polynomialProduction.port_a) annotation (
       Line(
-      points={{14,-50.6},{12,-50.6},{12,-8.54545},{-7.84,-8.54545}},
+      points={{14,-50.6},{12,-50.6},{12,-8.54545},{-15.84,-8.54545}},
       color={0,0,0},
       smooth=Smooth.None));
   connect(HX8.flowPort_supply_in, fan.port_b) annotation (Line(
@@ -1082,9 +1238,29 @@ equation
       color={0,0,0},
       smooth=Smooth.None));
   connect(HX7.flowPort_supply_in, HX17.flowPort_supply_out) annotation (Line(
-      points={{-2,-50.2},{2,-50.2},{2,-50},{6,-50},{6,-8},{8.2,-8.54545},{8.2,
-          -4}},
+      points={{-2,-50.2},{2,-50.2},{2,-50},{6,-50},{6,-8},{8.2,-8.54545},{8.2,-4}},
       color={0,0,0},
+      smooth=Smooth.None));
+
+  connect(boundary.ports[1], polynomialProduction.port_a) annotation (Line(
+      points={{-50,-5},{-8,-5},{-8,-8.54545},{-15.84,-8.54545}},
+      color={0,127,255},
+      smooth=Smooth.None));
+  connect(const.y, fan.dp_in) annotation (Line(
+      points={{-75,38},{-40,38},{-40,-11.2},{-4.08,-11.2}},
+      color={0,0,127},
+      smooth=Smooth.None));
+  connect(building4.port_return, HX4.flowPort_b1) annotation (Line(
+      points={{-51.6,-40},{-49.6,-40},{-49.6,-46}},
+      color={0,127,255},
+      smooth=Smooth.None));
+  connect(building4.port_supply, HX4.flowPort_a1) annotation (Line(
+      points={{-48.4,-40},{-48.4,-40},{-48.4,-46}},
+      color={0,127,255},
+      smooth=Smooth.None));
+  connect(const1.y, polynomialProduction.TSet) annotation (Line(
+      points={{-51,58},{-38,58},{-38,-2},{-24.8,-2}},
+      color={0,0,127},
       smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(extent={{-100,-100},{120,100}},
           preserveAspectRatio=false), graphics={
@@ -1105,7 +1281,7 @@ equation
           color={127,0,0},
           smooth=Smooth.None),
         Line(
-          points={{14,-46},{120,-46}},
+          points={{16,-46},{122,-46}},
           color={127,0,0},
           smooth=Smooth.None)}),Icon(coordinateSystem(extent={{-100,-100},{120,
             100}})),
