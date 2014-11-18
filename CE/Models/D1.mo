@@ -330,8 +330,7 @@ equation
       thickness=0.5,
       smooth=Smooth.None));
   connect(doors_D.propsBus_a, dayzone.propsBus[12:13]) annotation (Line(
-      points={{47,-89},{47,-82},{70,-82},{70,-70},{70,-70},{70,-56},{70,-56},{
-          70,-56},{80,-56},{80,-57.5714}},
+      points={{47,-89},{47,-82},{70,-82},{70,-56},{80,-56},{80,-57.5714}},
       color={255,204,51},
       thickness=0.5,
       smooth=Smooth.None));
