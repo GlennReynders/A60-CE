@@ -729,67 +729,67 @@ model neighborhood_NoApp_DH "Neighborhood without appartments"
   Modelica.Blocks.Sources.Constant const1(k=273.15 + 80)
     annotation (Placement(transformation(extent={{-72,48},{-52,68}})));
 equation
-  connect(HX24.flowPort_b1, building24.port_return) annotation (Line(
+  connect(HX24.flowPort_sec_out, building24.port_in) annotation (Line(
       points={{14,71.6},{22,71.6},{22,64},{28.4,64}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(building24.port_supply, HX24.flowPort_a1) annotation (Line(
+  connect(building24.port_out, HX24.flowPort_sec_in) annotation (Line(
       points={{31.6,64},{32,64},{32,62},{18,62},{18,70.4},{14,70.4}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(building23.port_supply, HX23.flowPort_a1) annotation (Line(
+  connect(building23.port_out, HX23.flowPort_sec_in) annotation (Line(
       points={{-8.4,60},{-4,60},{-4,61.6},{4,61.6}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX23.flowPort_b1, building23.port_return) annotation (Line(
+  connect(HX23.flowPort_sec_out, building23.port_in) annotation (Line(
       points={{4,60.4},{2,60.4},{2,58},{-11.6,58},{-11.6,60}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX22.flowPort_b1, building22.port_return) annotation (Line(
+  connect(HX22.flowPort_sec_out, building22.port_in) annotation (Line(
       points={{14,49.6},{16,49.6},{16,44},{28.4,44}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX22.flowPort_a1, building22.port_supply) annotation (Line(
+  connect(HX22.flowPort_sec_in, building22.port_out) annotation (Line(
       points={{14,48.4},{14,42},{31.6,42},{31.6,44}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX21.flowPort_a1, building21.port_supply) annotation (Line(
+  connect(HX21.flowPort_sec_in, building21.port_out) annotation (Line(
       points={{4,39.6},{-2,39.6},{-2,40},{-8.4,40}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX21.flowPort_b1, building21.port_return) annotation (Line(
+  connect(HX21.flowPort_sec_out, building21.port_in) annotation (Line(
       points={{4,38.4},{-12,38.4},{-12,40},{-11.6,40}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX20.flowPort_b1, building20.port_return) annotation (Line(
+  connect(HX20.flowPort_sec_out, building20.port_in) annotation (Line(
       points={{14,29.6},{16,29.6},{16,30},{20,30},{20,24},{28.4,24}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX20.flowPort_a1, building20.port_supply) annotation (Line(
+  connect(HX20.flowPort_sec_in, building20.port_out) annotation (Line(
       points={{14,28.4},{16,28.4},{16,22},{31.6,22},{31.6,24}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX19.flowPort_a1, building19.port_supply) annotation (Line(
+  connect(HX19.flowPort_sec_in, building19.port_out) annotation (Line(
       points={{4,19.6},{2,19.6},{2,20},{-8.4,20}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX19.flowPort_b1, building19.port_return) annotation (Line(
+  connect(HX19.flowPort_sec_out, building19.port_in) annotation (Line(
       points={{4,18.4},{-12,18.4},{-12,20},{-11.6,20}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX17.flowPort_a1, building17.port_supply) annotation (Line(
+  connect(HX17.flowPort_sec_in, building17.port_out) annotation (Line(
       points={{4,-0.4},{-2,-0.4},{-2,0},{-8.4,0}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX17.flowPort_b1, building17.port_return) annotation (Line(
+  connect(HX17.flowPort_sec_out, building17.port_in) annotation (Line(
       points={{4,-1.6},{-4,-1.6},{-4,-2},{-11.6,-2},{-11.6,0}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX18.flowPort_b1, building18.port_return) annotation (Line(
+  connect(HX18.flowPort_sec_out, building18.port_in) annotation (Line(
       points={{14,9.6},{22,9.6},{22,4},{28.4,4}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX18.flowPort_a1, building18.port_supply) annotation (Line(
+  connect(HX18.flowPort_sec_in, building18.port_out) annotation (Line(
       points={{14,8.4},{18,8.4},{18,2},{31.6,2},{31.6,4}},
       color={0,0,0},
       smooth=Smooth.None));
@@ -918,19 +918,19 @@ equation
       points={{-15.84,-8.54545},{8.2,-8.54545},{8.2,-4}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(building1.port_return, HX1.flowPort_b1) annotation (Line(
+  connect(building1.port_in, HX1.flowPort_sec_out) annotation (Line(
       points={{-91.6,-40},{-91.6,-46}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(building1.port_supply, HX1.flowPort_a1) annotation (Line(
+  connect(building1.port_out, HX1.flowPort_sec_in) annotation (Line(
       points={{-88.4,-40},{-90.4,-40},{-90.4,-46}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(building3.port_return, HX3.flowPort_b1) annotation (Line(
+  connect(building3.port_in, HX3.flowPort_sec_out) annotation (Line(
       points={{-71.6,-40},{-71.6,-46},{-63.6,-46}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(building3.port_supply, HX3.flowPort_a1) annotation (Line(
+  connect(building3.port_out, HX3.flowPort_sec_in) annotation (Line(
       points={{-68.4,-40},{-68.4,-46},{-62.4,-46}},
       color={0,127,255},
       smooth=Smooth.None));
@@ -958,12 +958,12 @@ equation
       points={{-79,-52},{-78,-52},{-78,-51.8}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX2.flowPort_b1, building2.port_return) annotation (Line(
+  connect(HX2.flowPort_sec_out, building2.port_in) annotation (Line(
       points={{-74.4,-56},{-74,-56},{-74,-64},{-68,-64},{-68,-90},{-81.6,-90},{
           -81.6,-80}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX2.flowPort_a1, building2.port_supply) annotation (Line(
+  connect(HX2.flowPort_sec_in, building2.port_out) annotation (Line(
       points={{-75.6,-56},{-76,-56},{-76,-66},{-72,-66},{-72,-82},{-78.4,-82},{
           -78.4,-80}},
       color={0,0,0},
@@ -1024,12 +1024,12 @@ equation
       points={{-28,-51.4},{-28,-52},{-27,-52}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX6.flowPort_a1, building6.port_supply) annotation (Line(
+  connect(HX6.flowPort_sec_in, building6.port_out) annotation (Line(
       points={{-19.6,-56},{-20,-56},{-20,-60},{-12,-60},{-12,-82},{-18.4,-82},{
           -18.4,-80}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX6.flowPort_b1, building6.port_return) annotation (Line(
+  connect(HX6.flowPort_sec_out, building6.port_in) annotation (Line(
       points={{-18.4,-56},{-18,-56},{-18,-58},{-10,-58},{-10,-84},{-21.6,-84},{
           -21.6,-80}},
       color={0,0,0},
@@ -1050,19 +1050,19 @@ equation
       points={{-16,-50.6},{-16,-50},{-15,-50}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(building5.port_return, HX5.flowPort_b1) annotation (Line(
+  connect(building5.port_in, HX5.flowPort_sec_out) annotation (Line(
       points={{-31.6,-40},{-31.6,-46}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX5.flowPort_a1, building5.port_supply) annotation (Line(
+  connect(HX5.flowPort_sec_in, building5.port_out) annotation (Line(
       points={{-30.4,-46},{-30,-46},{-30,-40},{-28.4,-40}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(building7.port_return, HX7.flowPort_b1) annotation (Line(
+  connect(building7.port_in, HX7.flowPort_sec_out) annotation (Line(
       points={{-11.6,-40},{-12,-40},{-12,-44},{-5.6,-44},{-5.6,-46}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(building7.port_supply, HX7.flowPort_a1) annotation (Line(
+  connect(building7.port_out, HX7.flowPort_sec_in) annotation (Line(
       points={{-8.4,-40},{-8,-40},{-8,-42},{-4.4,-42},{-4.4,-46}},
       color={0,127,255},
       smooth=Smooth.None));
@@ -1114,29 +1114,29 @@ equation
       points={{32,-55.8},{36,-55.8},{36,-52},{37,-52}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(building8.port_return, HX8.flowPort_b1) annotation (Line(
+  connect(building8.port_in, HX8.flowPort_sec_out) annotation (Line(
       points={{8.4,-80},{8,-80},{8,-84},{22,-84},{22,-60},{17.6,-60},{17.6,-56}},
       color={0,127,255},
       smooth=Smooth.None));
 
-  connect(HX8.flowPort_a1, building8.port_supply) annotation (Line(
+  connect(HX8.flowPort_sec_in, building8.port_out) annotation (Line(
       points={{16.4,-56},{16,-56},{16,-62},{18,-62},{18,-82},{11.6,-82},{11.6,
           -80}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX9.flowPort_b1, building9.port_return) annotation (Line(
+  connect(HX9.flowPort_sec_out, building9.port_in) annotation (Line(
       points={{28.4,-46},{28.4,-40}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(building9.port_supply, HX9.flowPort_a1) annotation (Line(
+  connect(building9.port_out, HX9.flowPort_sec_in) annotation (Line(
       points={{31.6,-40},{29.6,-40},{29.6,-46}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX10.flowPort_b1, building10.port_return) annotation (Line(
+  connect(HX10.flowPort_sec_out, building10.port_in) annotation (Line(
       points={{29.6,-60},{30,-60},{30,-82},{38.4,-82},{38.4,-80}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX10.flowPort_a1, building10.port_supply) annotation (Line(
+  connect(HX10.flowPort_sec_in, building10.port_out) annotation (Line(
       points={{28.4,-60},{28,-60},{28,-86},{41.6,-86},{41.6,-80}},
       color={0,0,0},
       smooth=Smooth.None));
@@ -1148,11 +1148,11 @@ equation
       points={{41,-52},{44,-52},{44,-51.4},{46,-51.4}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(building11.port_return, HX11.flowPort_b1) annotation (Line(
+  connect(building11.port_in, HX11.flowPort_sec_out) annotation (Line(
       points={{48.4,-40},{48.4,-46}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(building11.port_supply, HX11.flowPort_a1) annotation (Line(
+  connect(building11.port_out, HX11.flowPort_sec_in) annotation (Line(
       points={{51.6,-40},{49.6,-40},{49.6,-46}},
       color={0,127,255},
       smooth=Smooth.None));
@@ -1172,11 +1172,11 @@ equation
       points={{59,-50},{64,-50},{64,-50.6},{68,-50.6}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(HX13.flowPort_a1, building13.port_supply) annotation (Line(
+  connect(HX13.flowPort_sec_in, building13.port_out) annotation (Line(
       points={{70.4,-56},{70,-56},{70,-90},{81.6,-90},{81.6,-80}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX13.flowPort_b1, building13.port_return) annotation (Line(
+  connect(HX13.flowPort_sec_out, building13.port_in) annotation (Line(
       points={{71.6,-56},{72,-56},{72,-84},{78.4,-84},{78.4,-80}},
       color={0,0,0},
       smooth=Smooth.None));
@@ -1196,11 +1196,11 @@ equation
       points={{74,-51.8},{75,-51.8},{75,-52}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX15.flowPort_a1, building15.port_supply) annotation (Line(
+  connect(HX15.flowPort_sec_in, building15.port_out) annotation (Line(
       points={{90.4,-56},{90,-56},{90,-88},{101.6,-88},{101.6,-80}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(HX15.flowPort_b1, building15.port_return) annotation (Line(
+  connect(HX15.flowPort_sec_out, building15.port_in) annotation (Line(
       points={{91.6,-56},{92,-56},{92,-84},{98.4,-84},{98.4,-80}},
       color={0,0,0},
       smooth=Smooth.None));
@@ -1220,11 +1220,11 @@ equation
       points={{94,-51.8},{97,-51.8},{97,-52}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(building16.port_return, HX16.flowPort_b1) annotation (Line(
+  connect(building16.port_in, HX16.flowPort_sec_out) annotation (Line(
       points={{108.4,-40},{108.4,-40},{108.4,-46}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(building16.port_supply, HX16.flowPort_a1) annotation (Line(
+  connect(building16.port_out, HX16.flowPort_sec_in) annotation (Line(
       points={{111.6,-40},{109.6,-40},{109.6,-46}},
       color={0,127,255},
       smooth=Smooth.None));
@@ -1250,11 +1250,11 @@ equation
       points={{-75,38},{-40,38},{-40,-11.2},{-4.08,-11.2}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(building4.port_return, HX4.flowPort_b1) annotation (Line(
+  connect(building4.port_in, HX4.flowPort_sec_out) annotation (Line(
       points={{-51.6,-40},{-49.6,-40},{-49.6,-46}},
       color={0,127,255},
       smooth=Smooth.None));
-  connect(building4.port_supply, HX4.flowPort_a1) annotation (Line(
+  connect(building4.port_out, HX4.flowPort_sec_in) annotation (Line(
       points={{-48.4,-40},{-48.4,-40},{-48.4,-46}},
       color={0,127,255},
       smooth=Smooth.None));
