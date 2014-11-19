@@ -12,7 +12,7 @@ model SL1 ":irrored Semi-Detached house on the LEFT side of the block, state 1"
     "Tilt compared to original orientation (=0)";
   parameter Real f=0.15 " Frame/window fraction: 0.15 ";
 
-protected
+//protected
 parameter Modelica.SIunits.Angle  Roof_incl = 32.47*Modelica.Constants.pi/180;
 parameter Modelica.SIunits.Volume  A_Volume = 43.26;
 parameter Modelica.SIunits.Area  A_Aroof_south = 28.49;
