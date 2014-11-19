@@ -1,5 +1,5 @@
 within CE.Models;
-model RC_SL2 "2Zone RC model for Annex SD"
+model RC_SL2 "2Zone RC model for Annex SL2"
 parameter Boolean geometric=false;
 extends IDEAS.Interfaces.BaseClasses.Structure(
     nZones=2,
@@ -40,7 +40,7 @@ parameter Real AwinENight = 0.00;
 parameter Real AwinSNight = 0.80;
 parameter Real AwinWNight = 5.76;
 
-//Parameters in model			
+//Parameters in model
 parameter Real abs1ED =  0;
 parameter Real abs1ND =  1.31521;
 parameter Real abs1SD =  0.43186;
@@ -162,28 +162,28 @@ public
     annotation (Placement(transformation(extent={{34,18},{54,38}})));
   Modelica.Blocks.Math.Sum[2] solDif(nin=4)
     annotation (Placement(transformation(extent={{34,-60},{54,-40}})));
-  TABULA.Greybox.Theoretical.SwWindowResponse swWindowResponse(
+  CE.Models.BaseClasses.SwWindowResponse swWindowResponse(
     final nLay=glazing.nLay,
     final SwAbs=glazing.SwAbs,
     final SwTrans=glazing.SwTrans,
     final SwTransDif=glazing.SwTransDif,
     final SwAbsDif=glazing.SwAbsDif)
     annotation (Placement(transformation(extent={{-82,82},{-72,92}})));
-  TABULA.Greybox.Theoretical.SwWindowResponse swWindowResponse1(
+  CE.Models.BaseClasses.SwWindowResponse swWindowResponse1(
     final nLay=glazing.nLay,
     final SwAbs=glazing.SwAbs,
     final SwTrans=glazing.SwTrans,
     final SwTransDif=glazing.SwTransDif,
     final SwAbsDif=glazing.SwAbsDif)
     annotation (Placement(transformation(extent={{-84,40},{-72,52}})));
-  TABULA.Greybox.Theoretical.SwWindowResponse swWindowResponse2(
+  CE.Models.BaseClasses.SwWindowResponse swWindowResponse2(
     final nLay=glazing.nLay,
     final SwAbs=glazing.SwAbs,
     final SwTrans=glazing.SwTrans,
     final SwTransDif=glazing.SwTransDif,
     final SwAbsDif=glazing.SwAbsDif)
     annotation (Placement(transformation(extent={{-82,-2},{-70,10}})));
-  TABULA.Greybox.Theoretical.SwWindowResponse swWindowResponse3(
+  CE.Models.BaseClasses.SwWindowResponse swWindowResponse3(
     final nLay=glazing.nLay,
     final SwAbs=glazing.SwAbs,
     final SwTrans=glazing.SwTrans,

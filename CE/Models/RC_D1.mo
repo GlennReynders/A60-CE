@@ -1,5 +1,5 @@
 within CE.Models;
-model RC_T1 "2Zone RC model for Annex T1"
+model RC_D1 "2Zone RC model for Annex D1"
 parameter Boolean geometric=false;
 extends IDEAS.Interfaces.BaseClasses.Structure(
     nZones=2,
@@ -30,91 +30,91 @@ input Real[nZones]  UserGains;
                             // cannot be seperated from heating using convective and radiative port, therefore equal to zero (problem??)
 input Real[nZones] Heating;
 //Theoretical parameters
-parameter Real AwinNDay = 6.00;
-parameter Real AwinEDay = 0;
-parameter Real AwinSDay = 2.88;
-parameter Real AwinWDay = 0.00;
+parameter Real AwinNDay = 1.80;
+parameter Real AwinEDay = 4.80;
+parameter Real AwinSDay = 7.04;
+parameter Real AwinWDay = 5.64;
 
-parameter Real AwinNNight = 6.96;
-parameter Real AwinENight = 0;
-parameter Real AwinSNight = 6.96;
-parameter Real AwinWNight = 0.00;
+parameter Real AwinNNight = 0.80;
+parameter Real AwinENight = 2.9;
+parameter Real AwinSNight = 4.30;
+parameter Real AwinWNight = 2.70;
 
 //Parameters in model
-parameter Real abs1ED =  0;
-parameter Real abs1ND =  0.906;
-parameter Real abs1SD =  0.43488;
-parameter Real abs1WD =  0;
-parameter Real abs2ED =  0;
-parameter Real abs2ND =  0.906;
-parameter Real abs2SD =  0.43488;
-parameter Real abs2WD =  0;
+parameter Real abs1ED =  0.7248;
+parameter Real abs1ND =  0.2718;
+parameter Real abs1SD =  1.06304;
+parameter Real abs1WD =  0.85164;
+parameter Real abs2ED =  0.7248;
+parameter Real abs2ND =  0.2718;
+parameter Real abs2SD =  1.06304;
+parameter Real abs2WD =  0.85164;
 parameter Real abs3ED =  0;
 parameter Real abs3ND =  0;
 parameter Real abs3SD =  0;
 parameter Real abs3WD =  0;
-parameter Real abs4ED =  0;
-parameter Real abs4ND =  0.906;
-parameter Real abs4SD =  0.43488;
-parameter Real abs4WD =  0;
-parameter Real abs5ED =  0;
-parameter Real abs5ND =  0.906;
-parameter Real abs5SD =  0.43488;
-parameter Real abs5WD =  0;
+parameter Real abs4ED =  0.7248;
+parameter Real abs4ND =  0.2718;
+parameter Real abs4SD =  1.06304;
+parameter Real abs4WD =  0.85164;
+parameter Real abs5ED =  0.7248;
+parameter Real abs5ND =  0.2718;
+parameter Real abs5SD =  1.06304;
+parameter Real abs5WD =  0.85164;
 
- parameter Real     CiD =  8.440E+05;
- parameter Real     CwD =  3.262E+06;
- parameter Real     CwiD =  1.483E+07;
- parameter Real     CflD =  5.37E+06;
+ parameter Real     CiD =  8.042E+04;
+ parameter Real     CwD =  1.002E+07;
+ parameter Real     CwiD =  1.104E+07;
+ parameter Real     CflD =  6.56E+06;
 
  parameter Real     f1D =  0.05;
  parameter Real     f2D =  0.1;
  parameter Real     f3D =  0.7;
  parameter Real     f4D =  0.05;
 
- parameter Real     hwD =  34.53603604;
- parameter Real     hflD =  130.3675532;
- parameter Real     hwiD =  340.2133554;
- parameter Real     infD =  28.09028827;
- parameter Real     UwD =  9.439419534;
- parameter Real     UflD =  13.25659243;
+ parameter Real     hwD =  159.0504505;
+ parameter Real     hflD =  159.287234;
+ parameter Real     hwiD =  287.7992565;
+ parameter Real     infD =  48.73486963;
+ parameter Real     UwD =  43.47180804;
+ parameter Real     UflD =  16.19732739;
 
-parameter Real abs1EN =  0;
-parameter Real abs1NN =  1.19592;
-parameter Real abs1SN =  0.5740416;
-parameter Real abs1WN =  0;
-parameter Real abs2EN = 0;
-parameter Real abs2NN =  1.19592;
-parameter Real abs2SN = 0.5740416;
-parameter Real abs2WN =  0;
+parameter Real abs1EN =  0.578028;
+parameter Real abs1NN =  0.358776;
+parameter Real abs1SN =  1.4032128;
+parameter Real abs1WN =  1.1241648;
+parameter Real abs2EN = 0.578028;
+parameter Real abs2NN =  0.358776;
+parameter Real abs2SN = 1.4032128;
+parameter Real abs2WN =  1.1241648;
 parameter Real abs3EN = 0;
 parameter Real abs3NN = 0;
 parameter Real abs3SN = 0;
 parameter Real abs3WN = 0;
-parameter Real abs5EN = 0;
-parameter Real abs5NN = 1.19592;
-parameter Real abs5SN = 0.5740416;
-parameter Real abs5WN = 0;
+parameter Real abs5EN = 0.578028;
+parameter Real abs5NN = 0.358776;
+parameter Real abs5SN = 1.4032128;
+parameter Real abs5WN = 1.1241648;
 
- parameter Real     CiN =  1.602E+06;
- parameter Real     CwN =  5.989E+06;
- parameter Real     CwiN =  6.444E+07;
+ parameter Real     CiN =  1.780E+06;
+ parameter Real     CwN =  1.764E+07;
+ parameter Real     CwiN =  4.711E+07;
  parameter Real     f1N =  0.1;
  parameter Real     f2N =  0.1;
  parameter Real     f3N =  0.7;
 
- parameter Real     hwN =  141.4978023;
- parameter Real     hwiN =  972.0621022;
- parameter Real     infN =  30.68539764;
- parameter Real     UwN =  32.81609224;
+ parameter Real     hwN =  540.0259875;
+ parameter Real     hwiN =  496.7019651;
+ parameter Real     infN =  26.63320552;
+ parameter Real     UwN =  89.00509191;
 
- parameter Real     CfiD =  13497814.65;
- parameter Real     CfiN =  13497814.65;
+ parameter Real     CfiD =  18239253;
+ parameter Real     CfiN =  18239253;
  parameter Real     f5D =  0.1;
  parameter Real     f5N =  0.1;
- parameter Real     UfDN =  112.2697311;
- parameter Real     Ufi =  224.5394622;
- parameter Real     UfND =  112.2697311;
+ parameter Real     UfDN =  151.7072269;
+ parameter Real     Ufi =  303.4144538;
+ parameter Real     UfND =  151.7072269;
 
 Real solN;
 Real solE;
@@ -378,4 +378,4 @@ heatPortRad[2].T=TiN;
       smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-150,
             -100},{150,100}}), graphics));
-end RC_T1;
+end RC_D1;
