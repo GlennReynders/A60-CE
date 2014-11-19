@@ -724,7 +724,7 @@ model neighborhood_NoApp_DH_RC "Neighborhood without appartments"
     p=300000)
     annotation (Placement(transformation(extent={{-42,-14},{-50,4}})));
 
-  Modelica.Blocks.Sources.Constant const(k=0.94)
+  Modelica.Blocks.Sources.Constant const(k=36000 + 250*22)
     annotation (Placement(transformation(extent={{-96,28},{-76,48}})));
   Modelica.Blocks.Sources.Constant const1(k=273.15 + 80)
     annotation (Placement(transformation(extent={{-72,48},{-52,68}})));
