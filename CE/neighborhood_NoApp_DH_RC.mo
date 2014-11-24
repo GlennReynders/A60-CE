@@ -460,7 +460,6 @@ model neighborhood_NoApp_DH_RC "Neighborhood without appartments"
         origin={-63,-49})));
   IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe12sup(
     redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
-
     m_flow_nominal=0.33,
     pipeDiameter=0.35) annotation (Placement(transformation(
         extent={{-2,-1},{2,1}},
@@ -469,7 +468,6 @@ model neighborhood_NoApp_DH_RC "Neighborhood without appartments"
 
   IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe12ret(
     redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
-
     m_flow_nominal=0.33,
     pipeDiameter=0.35) annotation (Placement(transformation(
         extent={{-2,-1},{2,1}},
@@ -483,7 +481,6 @@ model neighborhood_NoApp_DH_RC "Neighborhood without appartments"
         origin={-49,-49})));
   IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe34sup(
     redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
-
     m_flow_nominal=0.33,
     pipeDiameter=0.35) annotation (Placement(transformation(
         extent={{-2,-1},{2,1}},
@@ -492,7 +489,6 @@ model neighborhood_NoApp_DH_RC "Neighborhood without appartments"
 
   IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe34ret(
     redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
-
     m_flow_nominal=0.33,
     pipeDiameter=0.35) annotation (Placement(transformation(
         extent={{-2,-1},{2,1}},
@@ -506,7 +502,6 @@ model neighborhood_NoApp_DH_RC "Neighborhood without appartments"
         origin={-75,-53})));
   IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe23sup(
     redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
-
     m_flow_nominal=0.33,
     pipeDiameter=0.35) annotation (Placement(transformation(
         extent={{-2,-1},{2,1}},
@@ -515,7 +510,6 @@ model neighborhood_NoApp_DH_RC "Neighborhood without appartments"
 
   IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe23ret(
     redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
-
     m_flow_nominal=0.33,
     pipeDiameter=0.35) annotation (Placement(transformation(
         extent={{-2,-1},{2,1}},
@@ -529,7 +523,6 @@ model neighborhood_NoApp_DH_RC "Neighborhood without appartments"
         origin={-31,-49})));
   IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe45sup(
     redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
-
     m_flow_nominal=0.33,
     pipeDiameter=0.35) annotation (Placement(transformation(
         extent={{-2,-1},{2,1}},
@@ -538,7 +531,6 @@ model neighborhood_NoApp_DH_RC "Neighborhood without appartments"
 
   IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe45ret(
     redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
-
     m_flow_nominal=0.33,
     pipeDiameter=0.35) annotation (Placement(transformation(
         extent={{-2,-1},{2,1}},
@@ -547,7 +539,6 @@ model neighborhood_NoApp_DH_RC "Neighborhood without appartments"
 
   IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe56sup(
     redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
-
     m_flow_nominal=0.33,
     pipeDiameter=0.35) annotation (Placement(transformation(
         extent={{-2,-1},{2,1}},
@@ -556,7 +547,6 @@ model neighborhood_NoApp_DH_RC "Neighborhood without appartments"
 
   IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe56ret(
     redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
-
     m_flow_nominal=0.33,
     pipeDiameter=0.35) annotation (Placement(transformation(
         extent={{-2,-1},{2,1}},
@@ -575,7 +565,6 @@ model neighborhood_NoApp_DH_RC "Neighborhood without appartments"
         origin={-5,-49})));
   IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe67sup(
     redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
-
     m_flow_nominal=0.33,
     pipeDiameter=0.35) annotation (Placement(transformation(
         extent={{-2,-1},{2,1}},
@@ -584,7 +573,6 @@ model neighborhood_NoApp_DH_RC "Neighborhood without appartments"
 
   IDEAS.DistrictHeating.Pipes.InsulatedPipeM pipe67ret(
     redeclare package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater,
-
     m_flow_nominal=0.33,
     pipeDiameter=0.35) annotation (Placement(transformation(
         extent={{-2,-1},{2,1}},
@@ -1047,9 +1035,9 @@ building24.building.Heating =  -building24.heatingSystem.heatPortCon.Q_flow-buil
       smooth=Smooth.None));
   connect(HX22.flowPort_sec_in, building22.port_out) annotation (Line(
       points={{14,48.4},{18,48.4},{18,48},{20,48},{20,42},{31.6,42},{31.6,44}},
-
       color={0,0,0},
       smooth=Smooth.None));
+
   connect(HX21.flowPort_return_in, pipe2122_ret.port_b) annotation (Line(
       points={{9.6,42},{7,42}},
       color={0,0,0},
